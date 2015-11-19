@@ -1,3 +1,5 @@
+# Vaadin 7.5 compatibility fork
+
 # Network Graph Add-on for Vaadin 7
 
 [![Build Status](https://travis-ci.org/elomagic/network-graph.png)](https://travis-ci.org/elomagic/network-graph)
