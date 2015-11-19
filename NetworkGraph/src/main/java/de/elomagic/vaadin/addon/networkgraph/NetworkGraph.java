@@ -22,8 +22,8 @@ import com.vaadin.server.JsonCodec;
 import com.vaadin.ui.AbstractJavaScriptComponent;
 import com.vaadin.ui.Component;
 import com.vaadin.ui.JavaScriptFunction;
-import org.json.JSONArray;
-import org.json.JSONException;
+
+import elemental.json.JsonArray;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -52,8 +52,8 @@ public class NetworkGraph extends AbstractJavaScriptComponent {
         addFunction("onSelectNodes", new JavaScriptFunction() {
 
             @Override
-            public void call(final JSONArray arguments) throws JSONException {
-                JSONArray array = arguments.getJSONArray(0);
+            public void call(final JsonArray arguments) {
+                JsonArray array = arguments.getArray(0);
                 List<String> list = new ArrayList<>();
                 for (int i = 0; i < array.length(); i++) {
                     list.add(array.getString(i));
@@ -185,12 +185,8 @@ public class NetworkGraph extends AbstractJavaScriptComponent {
     }
 
     private Object encodeObject(Object o) {
-        try {
             EncodeResult result = JsonCodec.encode(o, null, o.getClass(), null);
             return result.getEncodedValue();
-        } catch (JSONException e) {
-            throw new RuntimeException(e);
-        }
     }
 
     public interface SelectListener {

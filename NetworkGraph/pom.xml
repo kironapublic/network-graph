@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>de.elomagic.vaadin.addon</groupId>
+    <groupId>com.kirona.vaadin.addon</groupId>
     <artifactId>network-graph</artifactId>
     <packaging>jar</packaging>
-    <version>0.9.1-SNAPSHOT</version>
+    <version>0.9.2</version>
     <name>NetworkGraph Add-on ${project.version}</name>
-    <description>Network Graph Add-on for Vaadin 7 based on the "Vis.js" Java Script library</description>
-    <url>https://github.com/elomagic/network-graph</url>
+    <description>Network Graph Add-on for Vaadin 7 based on the "Vis.js" Java Script library - Fork by Kirona</description>
+    <url>https://github.com/kironapublic/network-graph</url>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <vaadin.version>7.2.1</vaadin.version>
+        <vaadin.version>7.5.4</vaadin.version>
         <vaadin.plugin.version>${vaadin.version}</vaadin.plugin.version>
 
         <!-- ZIP Manifest fields -->
@@ -29,9 +29,9 @@
     </organization>
 
     <scm>
-        <url>https://github.com/elomagic/network-graph.git</url>
-        <connection>scm:git:https://github.com/elomagic/network-graph.git</connection>
-        <developerConnection>scm:git:https://github.com/elomagic/network-graph.git</developerConnection>
+        <url>https://github.com/kironapublic/network-graph</url>
+        <connection>scm:git:https://github.com/kironapublic/network-graph.git</connection>
+        <developerConnection>scm:git:https://github.com/kironapublic/network-graph.git</developerConnection>
         <tag>NetworkGraph add-on for Vaadin</tag>
     </scm>
 
@@ -40,11 +40,15 @@
             <id>elomagic</id>
             <name>Carsten Rambow</name>
         </developer>
+        <developer>
+            <id>kirona</id>
+            <name>Richard Newton</name>
+        </developer>        
     </developers>
 
     <issueManagement>
         <system>GitHub</system>
-        <url>https://github.com/elomagic/network-graph/issues</url>
+        <url>https://github.com/kironapublic/network-graph</url>
     </issueManagement>
 
     <licenses>
@@ -58,11 +62,11 @@
     <repositories>
         <repository>
             <id>vaadin-addons</id>
-            <url>http://maven.vaadin.com/vaadin-addons</url>
+            <url>http://estoril:8081/nexus/content/repositories/vaadin-addons/</url>
         </repository>
         <repository>
             <id>vaadin-snapshots</id>
-            <url>http://oss.sonatype.org/content/repositories/vaadin-snapshots/</url>
+            <url>http://estoril:8081/nexus/content/repositories/vaadin-snapshots/</url>
             <releases>
                 <enabled>false</enabled>
             </releases>
@@ -75,7 +79,7 @@
     <pluginRepositories>
         <pluginRepository>
             <id>vaadin-snapshots</id>
-            <url>http://oss.sonatype.org/content/repositories/vaadin-snapshots/</url>
+            <url>http://estoril:8081/nexus/content/repositories/vaadin-snapshots/</url>
             <releases>
                 <enabled>false</enabled>
             </releases>
@@ -100,7 +104,7 @@
         <dependency>
             <groupId>com.google.guava</groupId>
             <artifactId>guava</artifactId>
-            <version>17.0</version>
+            <version>18.0</version>
         </dependency>
 
         <!-- This can be replaced with TestNG or some other test framework supported by the surefire plugin -->
@@ -120,8 +124,8 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.0</version>
                 <configuration>
-                    <source>1.7</source>
-                    <target>1.7</target>
+                    <source>1.8</source>
+                    <target>1.8</target>
                     <showDeprecation>true</showDeprecation>
                 </configuration>
             </plugin>
